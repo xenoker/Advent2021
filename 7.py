@@ -12,6 +12,8 @@ def fuelcost(pn,diff):
 def part(pn):
     return min( sum(fuelcost(pn,abs(p-pos))*n for p,n in c_crabs.items()) for pos in range(min(s_crabs),max(s_crabs)) )
 
+#def part(pn): return min( sum( pn==1 and abs(p-pos)*n or sum(range(1,abs(p-pos)+1))*n for p,n in c_crabs.items()) for pos in range(min(c_crabs),max(c_crabs)) )
+
 if __name__ == '__main__':
     assert part(1)==349769
     assert part(2)==99540554
