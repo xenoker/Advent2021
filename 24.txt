@@ -1,0 +1,311 @@
+inp w		w=A
+mul x 0		x=0
+add x z		x=0
+mod x 26	x=0
+div z 1		z=0
+add x 14	x=14
+eql x w		x=0
+eql x 0		x=1
+mul y 0		y=0
+add y 25	y=25
+mul y x		y=25
+add y 1		y=26
+mul z y		z=0
+mul y 0		y=0
+add y w		y=A
+add y 12	y=A+12
+mul y x		y=A+12
+add z y		z = A+12
+
+inp w		w=B
+mul x 0		x=0
+add x z		x=A+12
+mod x 26	x=(A+12)%26
+div z 1		z=A+12
+add x 13	x=(A+12)%26+13
+eql x w		x=0
+eql x 0		x=1
+mul y 0		y=0
+add y 25	y=25
+mul y x		y=25
+add y 1		y=26
+mul z y		z = (A+12)*26
+mul y 0		y=0
+add y w		y=B
+add y 6		y=B+6
+mul y x		y=B+6
+add z y		z=(A+12)*26+(B+6) 
+
+inp w		w=C
+mul x 0		x=0
+add x z		
+mod x 26
+div z 1
+add x 12
+eql x w		x=0
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 4
+mul y x
+add z y		... C+4
+
+inp w		D
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 14
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 5
+mul y x
+add z y		... D+5
+
+inp w		E
+mul x 0		
+add x z		
+mod x 26	
+div z 1
+add x 13
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 0
+mul y x
+add z y		... E+0
+
+inp w		F
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -7		E+0-7 = F 
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 4
+mul y x
+add z y
+
+inp w		G
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -13		D+5-13=G
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 15
+mul y x
+add z y
+
+inp w		H
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 10
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 14
+mul y x
+add z y			... H+14
+
+inp w		I
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -7		H+14-7=I
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 6
+mul y x
+add z y
+
+inp w		J
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 11
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 14
+mul y x
+add z y		J+14
+
+inp w		K
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -9		J+14-9=K
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 8
+mul y x
+add z y
+
+inp w		L
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -2			C+4-2=L
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 5
+mul y x
+add z y
+
+inp w		M
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -9		B+6-9=M
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 14
+mul y x
+add z y
+
+inp w		N
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -14		A+12-14=N
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 4
+mul y x
+add z y
+
+
+
+
+push a,b,c,d,e
+pop e cmp f
+pop d cmp g
+push h
+pop h cmp I
+push j
+pop j cmp k
+pop c cmp l
+pop b cmp m
+pop a cmp n
+
+E+0 -7 = F 
+D+5 -13=G
+H+14 -7=I
+J+14 -9=K
+C+4 -2=L
+B+6 -9=M
+A+12 -14=N
+
+N = A-2
+M = B-3
+L = C+2
+G = D-8
+F = E-7
+I = H+7
+K = J+5
+
+high		low
+A=9		A=3
+B=9		B=4
+C=7		C=1
+D=9		D=9
+E=9		E=8
+F=2		F=1
+G=1		G=1
+H=2		H=1
+I=9		I=8
+J=4		J=1
+K=9		K=6
+L=9		L=3
+M=6		M=1
+N=7		N=1
